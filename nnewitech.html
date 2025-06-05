@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nnewitech Canteen</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #050505;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    header {
+      text-align: center;
+      padding: 0.5rem;
+      background: #050505;
+      color: aliceblue;
+    }
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .menu-item {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .menu-item:hover {
+      background-color: #f0f0f0;
+    }
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    #cart {
+      padding: 1rem;
+      background: #fffdfd;
+      color: #050505;
+    }
+    #contact {
+      padding: 1rem;
+      background-color: #6e0505;
+      color: #000;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 400px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0a0a0a;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Nnewitech Canteen</div>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#cart">Cart</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Welcome to Nnewitech Canteen</h1>
+    <p>Delicious local dishes and refreshing drinks</p>
+  </header>
+
+  <section id="menu">
+    <h2>Food Menu</h2>
+    <div class="menu-container" id="menu-items">
+      <!-- Menu items populated via JavaScript -->
+       <div class="menu-item"><img src="images/jollof rice.jpeg" alt="Jollof Rice"><h3>Jollof Rice</h3><p>₦1000</p><button onclick="addToCart('Jollof Rice', 1000)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/white-rice.jpeg" alt="White Rice and Stew"><h3>White Rice and Stew</h3><p>₦1000</p><button onclick="addToCart('White Rice and Stew', 1000)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/egusi.jpeg" alt="Egusi Soup"><h3>Egusi Soup</h3><p>₦1200</p><button onclick="addToCart('Egusi Soup', 1200)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/oha soup.jpeg" alt="Oha Soup"><h3>Oha Soup</h3><p>₦1200</p><button onclick="addToCart('Oha Soup', 1200)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/white soup.jpeg" alt="White Soup"><h3>White Soup</h3><p>₦1200</p><button onclick="addToCart('White Soup', 1200)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/bitterleaf.jpeg" alt="Bitterleaf Soup"><h3>Bitterleaf Soup</h3><p>₦1200</p><button onclick="addToCart('Bitterleaf Soup', 1200)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/okro soup.jpeg" alt="Okro Soup"><h3>Okro Soup</h3><p>₦1000</p><button onclick="addToCart('Okro Soup', 1000)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/semo.jpeg" alt="Semolina"><h3>Semolina</h3><p>₦500</p><button onclick="addToCart('Semolina', 500)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/garri.jpeg" alt="Garri"><h3>Garri</h3><p>₦400</p><button onclick="addToCart('Garri', 400)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/akpu.jpeg" alt="Fufu"><h3>Fufu</h3><p>₦500</p><button onclick="addToCart('Fufu', 500)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/5alive.jpeg" alt="5Alive"><h3>5Alive</h3><p>₦500</p><button onclick="addToCart('5Alive', 500)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/exotic.jpeg" alt="Exotic"><h3>Exotic</h3><p>₦500</p><button onclick="addToCart('Exotic', 500)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/malt.jpeg" alt="Malt"><h3>Malt</h3><p>₦400</p><button onclick="addToCart('Malt', 400)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/fanta.jpeg" alt="Fanta"><h3>Fanta</h3><p>₦300</p><button onclick="addToCart('Fanta', 300)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/sprite.jpeg" alt="Sprite"><h3>Sprite</h3><p>₦300</p><button onclick="addToCart('Sprite', 300)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/coke.jpeg" alt="Coke"><h3>Coke</h3><p>₦300</p><button onclick="addToCart('Coke', 300)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/vsmatic.jpeg" alt="Vsmatic"><h3>Vsmatic</h3><p>₦400</p><button onclick="addToCart('Vsmatic', 400)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/vitamilk.jpeg" alt="Vita Milk"><h3>Vita Milk</h3><p>₦600</p><button onclick="addToCart('Vita Milk', 600)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/nutri yo.jpeg" alt="Nutri Yo"><h3>Nutri Yo</h3><p>₦500</p><button onclick="addToCart('Nutri Yo', 500)">Add to Cart</button></div>
+      <div class="menu-item"><img src="images/holandia.jpeg" alt="Holandia Yoghurt"><h3>Holandia Yoghurt</h3><p>₦600</p><button onclick="addToCart('Holandia Yoghurt', 600)">Add to Cart</button></div>
+    </div>
+  </section>
+
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: ₦<span id="total-price">0</span></p>
+    <button onclick="placeOrder()">Place Order</button>
+  </section>
+    </div>
+  </section>
+
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: ₦<span id="total-price">0</span></p>
+    <button onclick="placeOrder()">Place Order</button>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nnewitech Canteen</p>
+  </footer>
+
+  <script>
+    const menuItems = [
+      { name: 'Jollof Rice', price: 1000, img: 'images/jollof_rice.jpg' },
+      { name: 'White Rice and Stew', price: 1000, img: 'images/white_rice.jpg' },
+      { name: 'Egusi Soup', price: 1200, img: 'images/egusi.jpg' },
+      { name: 'Oha Soup', price: 1200, img: 'images/oha.jpg' },
+      { name: 'White Soup', price: 1200, img: 'images/white_soup.jpg' },
+      { name: 'Bitterleaf Soup', price: 1200, img: 'images/bitterleaf.jpg' },
+      { name: 'Okro Soup', price: 1000, img: 'images/okro.jpg' },
+      { name: 'Semolina', price: 500, img: 'images/semolina.jpg' },
+      { name: 'Garri', price: 400, img: 'images/garri.jpg' },
+      { name: 'Fufu', price: 500, img: 'images/fufu.jpg' },
+      { name: '5Alive', price: 500, img: 'images/5alive.jpg' },
+      { name: 'Exotic', price: 500, img: 'images/exotic.jpg' },
+      { name: 'Malt', price: 400, img: 'images/malt.jpg' },
+      { name: 'Fanta', price: 300, img: 'images/fanta.jpg' },
+      { name: 'Sprite', price: 300, img: 'images/sprite.jpg' },
+      { name: 'Coke', price: 300, img: 'images/coke.jpg' },
+      { name: 'Vsmatic', price: 400, img: 'images/vsmatic.jpg' },
+      { name: 'Vita Milk', price: 600, img: 'images/vita_milk.jpg' },
+      { name: 'Nutri Yo', price: 500, img: 'images/nutri_yo.jpg' },
+      { name: 'Holandia Yoghurt', price: 600, img: 'images/holandia.jpg' }
+    ];
+
+    const cart = [];
+
+    function renderMenu() {
+      const container = document.getElementById('menu-items');
+      menuItems.forEach(({ name, price, img }) => {
+        const div = document.createElement('div');
+        div.className = 'menu-item';
+        div.onclick = () => addToCart(name, price);
+        div.innerHTML = `
+          <img src="${img}" alt="${name}">
+          <h3>${name}</h3>
+          <p>₦${price}</p>
+          <small>Click to add to cart</small>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const total = document.getElementById('total-price');
+      cartList.innerHTML = '';
+      let totalPrice = 0;
+
+      cart.forEach(({ item, price }) => {
+        const li = document.createElement('li');
+        li.textContent = ${item} - ₦${price};
+        cartList.appendChild(li);
+        totalPrice += price;
+      });
+
+      total.textContent = totalPrice;
+    }
+
+    function placeOrder() {
+      if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+      alert('Your order has been placed!');
+      cart.length = 0;
+      updateCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', renderMenu);
+  </script>
+</body>
+
+</html>
